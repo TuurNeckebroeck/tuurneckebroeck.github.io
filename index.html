@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--
+  BRON: https://www.w3schools.com/howto/tryhow_css_parallax_demo.htm
+-->
+
+
+<html>
+  <head>
+    <script>
+      function menuAnim(x){
+        x.classList.toggle("toggleMenu");
+      }
+    </script>
+
+    <style>
+      body, html {
+        height: 100%;
+        margin: 0;
+        font: 400 15px/1.8 "Lato", sans-serif;
+        color: #777;
+      }
+
+      .bgimg-1, .bgimg-2, .bgimg-3 {
+        position: relative;
+        opacity: 0.65;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+      }
+      .bgimg-1 {
+        background-image: url("images/svartifoss.jpg");
+        min-height: 100%;
+      }
+
+      .bgimg-2 {
+        background-image: url("images/papegaaiduiker.jpg");
+        min-height: 400px;
+      }
+
+      .bgimg-3 {
+        background-image: url("images/bgimg3.jpg");
+        min-height: 400px;
+      }
+
+      .caption {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: #000;
+      }
+
+      .caption span.border {
+        background-color: #111;
+        color: #fff;
+        padding: 18px;
+        font-size: 25px;
+        letter-spacing: 10px;
+      }
+
+      .menuIcon {
+        	display: inline-block;
+          background: transparent;
+      }
+
+      .line1, .line2, .line3{
+        background-color: #fff;
+        width: 35px;
+        height: 5px;
+        margin-top: 6px;
+        transition: 0.4s;
+      }
+
+      .toggleMenu .line2 {
+        opacity: 0;
+      }
+
+      .toggleMenu .line1 {
+        -webkit-transform: rotate(-45deg) translate(-9px,6px);
+      }
+
+      .toggleMenu .line3 {
+        -webkit-transform: rotate(585deg) translate(8px,8px);
+      }
+
+      h3 {
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font: 20px "Lato", sans-serif;
+        color: #111;
+      }
+
+      /* Turn off parallax scrolling for tablets and phones */
+      @media only screen and (max-device-width: 1024px) {
+          .bgimg-1, .bgimg-2, .bgimg-3 {
+              background-attachment: scroll;
+          }
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="bgimg-1">
+      <div class="caption">
+        <span class="border">Titel</span>
+        <div class="menuIcon" onclick="menuAnim(this)">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIV TUSSEN 2 ACHTERGRONDEN -->
+    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+      <h3 style="text-align:center;">Tekst tussen 2 achtergronden</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu vehicula justo, eu porta mi. Nullam vel nulla ornare, fermentum eros quis, tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce non tellus et nibh mattis fringilla. Nunc quam ligula, vehicula at ipsum nec, rhoncus fermentum sem. In ullamcorper neque turpis, ut feugiat leo semper at. Cras imperdiet turpis vitae elementum tincidunt.</p>
+    </div>
+
+    <div class="bgimg-2">
+      <div class="caption">
+        <span class="border">2e foto (gereduceerde hoogte: 400px)</span>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <h3>scheiding tussen 2d en 3e foto</h3>
+    </div>
+
+    <div class="bgimg-3">
+
+    </div>
+
+  </body>
+</html>
